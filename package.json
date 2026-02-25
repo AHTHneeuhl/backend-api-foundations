@@ -1,4 +1,8 @@
 {
   "name": "backend-api-foundations",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.19.33",
+    "typescript": "^5.9.3"
+  }
 }
