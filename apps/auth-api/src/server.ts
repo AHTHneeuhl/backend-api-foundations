@@ -3,8 +3,8 @@ import { config } from "./config";
 
 const app = createApp();
 
-app.listen(config.port, () => {
+app.listen(config.service.port, () => {
   console.log(
-    `[${config.serviceName}] running on port ${config.port} in ${config.nodeEnv} mode`,
+    `[${config.service.name}] running on port ${config.service.port} in ${config.service.env} mode`,
   );
 });
