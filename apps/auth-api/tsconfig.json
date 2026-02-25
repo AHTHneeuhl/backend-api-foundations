@@ -10,6 +10,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "references": [{ "path": "../../packages/shared-logger" }],
+  "references": [
+    { "path": "../../packages/shared-logger" },
+    { "path": "../../packages/shared-types" }
+  ],
   "include": ["src"]
 }

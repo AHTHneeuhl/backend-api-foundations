@@ -1,5 +1,5 @@
 import express from "express";
-import { errorMiddleware } from "./middleware/error.middleware";
+import { errorMiddleware } from "./middlewares/error.middleware";
 
 const app = express();
 
@@ -10,4 +10,4 @@ app.use(express.json());
 // MUST be last
 app.use(errorMiddleware);
 
-export default app;
+export const createApp = () => app;
