@@ -1,9 +1,10 @@
 import { Request, Response, NextFunction } from "express";
+import { AppError } from "../errors/app-error";
 import { logger } from "../utils/logger";
 
 /**
- * Centralized error handler
- * No raw errors should ever leak to the client
+ * Centralized Express error handler
+ * MUST be registered last
  */
 export const errorMiddleware = (
   err: Error,
@@ -11,16 +12,26 @@ export const errorMiddleware = (
   res: Response,
   _next: NextFunction,
 ) => {
-  logger.error(
-    {
-      message: err.message,
-      stack: err.stack,
-    },
-    "Unhandled error",
-  );
+  if (err instanceof AppError) {
+    logger.warn({ code: err.code, stack: err.stack }, err.message);
 
-  res.status(500).json({
+    return res.status(err.statusCode).json({
+      success: false,
+      error: {
+        code: err.code,
+        message: err.message,
+      },
+    });
+  }
+
+  // Unknown / programming errors
+  logger.error({ stack: err.stack }, "Unhandled error");
+
+  return res.status(500).json({
     success: false,
-    message: "Internal Server Error",
+    error: {
+      code: "INTERNAL_ERROR",
+      message: "Something went wrong",
+    },
   });
 };
