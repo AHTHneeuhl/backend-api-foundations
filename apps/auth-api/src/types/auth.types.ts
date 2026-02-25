@@ -1,7 +1,8 @@
 /**
- * Auth-related shared types
+ * JWT payload structure
+ * Keep this MINIMAL
  */
 export type JwtPayload = {
   userId: string;
-  role: string;
+  role: "admin" | "user";
 };
