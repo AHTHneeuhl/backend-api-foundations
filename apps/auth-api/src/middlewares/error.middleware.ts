@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { logger } from "../utils/logger";
 
 /**
  * Centralized error handler
@@ -10,7 +11,13 @@ export const errorMiddleware = (
   res: Response,
   _next: NextFunction,
 ) => {
-  console.error(err);
+  logger.error(
+    {
+      message: err.message,
+      stack: err.stack,
+    },
+    "Unhandled error",
+  );
 
   res.status(500).json({
     success: false,
