@@ -34,3 +34,111 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+####################################
+# Node / Package managers
+####################################
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+####################################
+# TypeScript build output
+####################################
+dist/
+build/
+out/
+lib/
+*.tsbuildinfo
+
+####################################
+# Environment variables
+####################################
+.env
+.env.*
+!.env.example
+
+####################################
+# Logs
+####################################
+logs/
+*.log
+
+####################################
+# Coverage / Test artifacts
+####################################
+coverage/
+.nyc_output/
+junit.xml
+
+####################################
+# Runtime data
+####################################
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+####################################
+# Docker
+####################################
+docker-data/
+*.docker.env
+
+####################################
+# Cache directories
+####################################
+.cache/
+.eslintcache
+.turbo/
+.nx/
+.vscode/.eslintcache
+
+####################################
+# IDE / Editor
+####################################
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.iml
+
+####################################
+# OS-specific
+####################################
+.DS_Store
+Thumbs.db
+
+####################################
+# Temporary files
+####################################
+tmp/
+temp/
+*.tmp
+*.swp
+
+####################################
+# API-specific artifacts
+####################################
+swagger-output.json
+openapi.json
+graphql-schema.graphql
+graphql-schema.json
+
+####################################
+# Database
+####################################
+*.sqlite
+*.sqlite3
+*.db
+
+####################################
+# Secrets & keys
+####################################
+*.pem
+*.key
+*.crt
