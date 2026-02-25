@@ -9,5 +9,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
-  }
+  },
+  "references": [{ "path": "../../packages/shared-logger" }],
+  "include": ["src"]
 }
