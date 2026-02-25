@@ -12,7 +12,7 @@ export const createApp = () => {
   // Health check (VERY important in microservices)
   app.get("/health", (_req, res) => {
     res.status(200).json({
-      service: config.serviceName,
+      service: config.service.name,
       status: "healthy",
     });
   });
