@@ -1,13 +1,9 @@
 import { Router } from "express";
+import { authRouter } from "./auth.routes";
 
 export const apiRouter = Router();
 
 /**
- * Temporary route
- * Will be removed once auth routes are added
+ * /api/v1/auth/*
  */
-apiRouter.get("/ping", (_req, res) => {
-  res.json({
-    message: "auth-api is alive",
-  });
-});
+apiRouter.use("/auth", authRouter);
